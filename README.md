@@ -32,6 +32,21 @@ You can edit any of these on github.com: open the file, click the pencil, then
   (e.g. Formspree) or a hosted checkout link (Shopify, Square, a Stripe
   Payment Link) to take them online instead.
 
+## Logo and brand files
+
+The logo is a carnival feather headpiece over the Trinidad & Tobago flag.
+`icon.svg` is the master file; the PNGs in `brand/` are ready to upload:
+
+| File | Use it for |
+| --- | --- |
+| `brand/profile-photo.png` | Instagram, TikTok, Facebook and YouTube profile pictures |
+| `brand/logo-horizontal-dark.png` | Logo with name, on dark backgrounds (flyers, video intros) |
+| `brand/logo-horizontal-light.png` | Logo with name, on white or light backgrounds |
+| `brand/logo-mark.png` | The logo alone, transparent background |
+
+`favicon.ico` and `apple-touch-icon.png` are the browser-tab and phone
+home-screen icons.
+
 ## Domain setup (roadqueenfitness.com)
 
 The `CNAME` file tells GitHub Pages to serve this site at
