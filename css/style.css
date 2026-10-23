@@ -241,7 +241,7 @@ button { cursor: pointer; }
 /* ---------- Hero ---------- */
 .hero { position: relative; min-height: 100vh; min-height: 100svh; display: grid; align-items: center; padding: calc(var(--header-h) + 32px) 0 96px; overflow: hidden; isolation: isolate; }
 .hero > .parallax-layer { z-index: -2; inset: -6% 0 -28%; }
-.hero > .parallax-layer img { filter: saturate(1.25) contrast(1.08); }
+.hero > .parallax-layer img { filter: saturate(1.25) contrast(1.08); object-position: 50% 18%; }
 .hero-shade {
   position: absolute; inset: 0; z-index: -1;
   background:
@@ -311,7 +311,7 @@ button { cursor: pointer; }
 .media-tile:hover .media-cap, .media-tile:focus-visible .media-cap { transform: none; opacity: 1; }
 .media-zoom { position: absolute; top: 14px; right: 14px; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(2, 5, 20, 0.6); border: 1px solid rgba(255, 255, 255, 0.3); opacity: 0; transform: scale(0.7); transition: all 0.3s var(--ease); }
 .media-tile:hover .media-zoom, .media-tile:focus-visible .media-zoom { opacity: 1; transform: none; }
-.media-cta { grid-column: span 2; display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 28px; background: radial-gradient(circle at 80% 20%, rgba(255, 201, 77, 0.25), transparent 50%), var(--gem); border-color: var(--gold); }
+.media-cta { display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 28px; background: radial-gradient(circle at 80% 20%, rgba(255, 201, 77, 0.25), transparent 50%), var(--gem); border-color: var(--gold); }
 /* Beat the photo-tile rule (.media-tile img) so the logo keeps its size. */
 .media-tile.media-cta .cta-mark { width: 64px; height: 64px; object-fit: contain; filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45)); transition: transform 0.5s var(--ease); }
 .media-tile.media-cta:hover .cta-mark, .media-tile.media-cta:focus-visible .cta-mark { transform: rotate(-8deg) scale(1.08); filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45)); }
@@ -373,7 +373,7 @@ button { cursor: pointer; }
   background:
     radial-gradient(circle at 30% 30%, rgba(0, 51, 255, 0.35), transparent 55%),
     linear-gradient(140deg, rgba(2, 5, 20, 0.6), rgba(26, 15, 92, 0.65)),
-    url('../img/crimson-tide.jpg') center 30% / cover;
+    url('../img/feather-red.jpg') center 40% / cover;
   border: 1px solid rgba(77, 123, 255, 0.5); box-shadow: var(--glow-blue);
   display: grid; align-items: center;
 }

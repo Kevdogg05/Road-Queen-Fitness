@@ -18,7 +18,7 @@ export function initGallery() {
     </a>`;
 
   const strip = $('#gallery-strip');
-  const order = [4, 0, 6, 1, 3, 2, 5];
+  const order = [6, 0, 2, 1, 5, 4, 3, 7];
   strip.innerHTML = order.map((i) => {
     const g = GALLERY[i];
     return `<figure class="strip-item">

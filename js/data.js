@@ -2,13 +2,14 @@
 // Edit freely — every section renders from these lists.
 
 export const GALLERY = [
-  { src: 'img/dancer-feathers.jpg', w: 768, h: 960, title: 'Feathers up', caption: 'Red, blue and royal on the road.', alt: 'Masquerader in a towering red and blue feathered headpiece and jewelled costume, mid-dance', size: 'tall' },
-  { src: 'img/blue-devil.jpg', w: 880, h: 1100, title: 'Blue devil energy', caption: "J'ouvert paint, no apologies.", alt: 'Masquerader covered in blue body paint with horns, blowing a red kiss', size: '' },
-  { src: 'img/light-trails.jpg', w: 791, h: 1400, title: 'After-dark fete', caption: 'Sweat sessions that feel like a party.', alt: 'Streaks of crimson and electric blue light at night', size: 'tall' },
-  { src: 'img/blue-plumes.jpg', w: 880, h: 1100, title: 'Plumes & beads', caption: 'Built to move in every costume.', alt: 'Close-up of royal blue ostrich plumes and beaded sequin costume', size: '' },
-  { src: 'img/eye.jpg', w: 880, h: 1100, title: 'Eyes on the crown', caption: 'Focus. Fire. Finish.', alt: 'Painted eye in electric blue with crimson lashes and a red tear', size: '' },
-  { src: 'img/palms-crimson.jpg', w: 1199, h: 899, title: 'Island heat', caption: 'Palms on fire over a midnight sea.', alt: 'Palm fronds glowing crimson above a deep blue sea', size: 'wide' },
-  { src: 'img/crimson-tide.jpg', w: 787, h: 1400, title: 'Midnight tide', caption: 'Recovery is part of the rhythm.', alt: 'Waves washing onto a dark shore in crimson and violet tones', size: '' },
+  { src: 'img/mas-queen.jpg', w: 922, h: 1152, title: 'Feathers up', caption: 'Red, blue and royal on the road.', alt: 'Laughing masquerader in a towering red and blue feathered headpiece, splashed with paint and holding a blue cup', size: 'tall' },
+  { src: 'img/jab-splash.jpg', w: 922, h: 1152, title: 'Blue devil energy', caption: "J'ouvert paint, no apologies.", alt: 'Masquerader in blue paint and horns spraying a burst of red and pink paint', size: '' },
+  { src: 'img/night-mas.jpg', w: 768, h: 1365, title: 'After-dark fete', caption: 'Palms on fire, paint in the air.', alt: 'Paint-covered revellers dancing under red-lit palm trees at night, a woman in a jewelled crown up front', size: 'tall' },
+  { src: 'img/led-mas.jpg', w: 922, h: 1152, title: 'Lit up for the road', caption: 'Built to move in every costume.', alt: 'Carnival costume with glowing blue LED feathers and beadwork at night', size: '' },
+  { src: 'img/wine-down.jpg', w: 1400, h: 764, title: 'Wine it down', caption: 'Sweat sessions that feel like a party.', alt: 'Smiling woman in a red crop top and blue shorts dancing in coloured smoke under stage lights', size: 'wide' },
+  { src: 'img/eye-fete.jpg', w: 896, h: 1200, title: 'Eyes on the crown', caption: 'Focus. Fire. Finish.', alt: 'Blue painted eye reflecting a crowd of dancers, a red tear running into a crimson shoreline under palm trees', size: '' },
+  { src: 'img/power-split.jpg', w: 976, h: 1077, title: 'Soca power', caption: 'Strength on one side, speed on the other.', alt: 'Split image: a high kick against red, and an athlete in red sprinting against blue', size: '' },
+  { src: 'img/feather-red.jpg', w: 896, h: 1200, title: 'Rise up', caption: 'Light as a feather, strong on the road.', alt: 'Blue feather against a red background', size: '' },
 ];
 
 // Weekly live classes. day: 0 = Sunday … 6 = Saturday; time is 24h in CONFIG.timezone.
@@ -29,15 +30,15 @@ export const EVENTS = [
 ];
 
 export const VIDEOS = [
-  { id: 'v1', title: 'Soca Sweat HIIT: Full Fete Burn', cat: 'workout', minutes: 32, level: 'All levels', thumb: 'img/dancer-feathers.jpg', pos: '50% 30%', youtubeId: '' },
-  { id: 'v2', title: 'Wine & Core: 20-Minute Waistline', cat: 'workout', minutes: 20, level: 'Intermediate', thumb: 'img/crimson-tide.jpg', pos: '50% 40%', youtubeId: '' },
-  { id: 'v3', title: 'Road March Stamina Builder', cat: 'workout', minutes: 45, level: 'Advanced', thumb: 'img/palms-night.jpg', pos: '50% 35%', youtubeId: '' },
-  { id: 'v4', title: 'Choreo Breakdown: The Feather Flow', cat: 'choreo', minutes: 18, level: 'Beginner', thumb: 'img/blue-plumes.jpg', pos: '50% 30%', youtubeId: '' },
-  { id: 'v5', title: 'Choreo Breakdown: Jab Jab Energy', cat: 'choreo', minutes: 15, level: 'Intermediate', thumb: 'img/blue-devil.jpg', pos: '60% 40%', youtubeId: '' },
-  { id: 'v6', title: 'Wining 101: Hips, Isolation & Control', cat: 'choreo', minutes: 22, level: 'Beginner', thumb: 'img/eye.jpg', pos: '45% 30%', youtubeId: '' },
-  { id: 'v7', title: "J'ouvert Morning: Paint, Powder & Power", cat: 'recap', minutes: 6, level: 'Event recap', thumb: 'img/light-trails.jpg', pos: '50% 50%', youtubeId: '' },
-  { id: 'v8', title: 'Road Queen Takeover: Parade Day', cat: 'recap', minutes: 8, level: 'Event recap', thumb: 'img/dancer-feathers.jpg', pos: '50% 75%', youtubeId: '' },
-  { id: 'v9', title: 'Midnight Fete Meetup', cat: 'recap', minutes: 5, level: 'Meetup recap', thumb: 'img/palms-crimson.jpg', pos: '60% 50%', youtubeId: '' },
+  { id: 'v1', title: 'Soca Sweat HIIT: Full Fete Burn', cat: 'workout', minutes: 32, level: 'All levels', thumb: 'img/power-split.jpg', pos: '80% 30%', youtubeId: '' },
+  { id: 'v2', title: 'Wine & Core: 20-Minute Waistline', cat: 'workout', minutes: 20, level: 'Intermediate', thumb: 'img/wine-down.jpg', pos: '45% 45%', youtubeId: '' },
+  { id: 'v3', title: 'Road March Stamina Builder', cat: 'workout', minutes: 45, level: 'Advanced', thumb: 'img/night-mas.jpg', pos: '50% 85%', youtubeId: '' },
+  { id: 'v4', title: 'Choreo Breakdown: The Feather Flow', cat: 'choreo', minutes: 18, level: 'Beginner', thumb: 'img/feather-red.jpg', pos: '50% 35%', youtubeId: '' },
+  { id: 'v5', title: 'Choreo Breakdown: Jab Jab Energy', cat: 'choreo', minutes: 15, level: 'Intermediate', thumb: 'img/jab-splash.jpg', pos: '50% 30%', youtubeId: '' },
+  { id: 'v6', title: 'Wining 101: Hips, Isolation & Control', cat: 'choreo', minutes: 22, level: 'Beginner', thumb: 'img/mas-queen.jpg', pos: '50% 72%', youtubeId: '' },
+  { id: 'v7', title: "J'ouvert Morning: Paint, Powder & Power", cat: 'recap', minutes: 6, level: 'Event recap', thumb: 'img/eye-fete.jpg', pos: '50% 55%', youtubeId: '' },
+  { id: 'v8', title: 'Road Queen Takeover: Parade Day', cat: 'recap', minutes: 8, level: 'Event recap', thumb: 'img/led-mas.jpg', pos: '55% 35%', youtubeId: '' },
+  { id: 'v9', title: 'Midnight Fete Meetup', cat: 'recap', minutes: 5, level: 'Meetup recap', thumb: 'img/night-mas.jpg', pos: '50% 8%', youtubeId: '' },
 ];
 
 export const CATEGORY_LABELS = { workout: 'Workout', choreo: 'Choreo Breakdown', recap: 'Road March Recap' };
