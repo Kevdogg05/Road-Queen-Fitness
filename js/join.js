@@ -13,7 +13,7 @@ export function initJoin() {
 
   const form = $('#join-form');
   const result = $('#join-result');
-  const welcome = (who) => showResult(result, `<strong>${icon('crown')} Welcome to the movement, ${esc(who.name.split(' ')[0])}!</strong>
+  const welcome = (who) => showResult(result, `<strong><img class="inline-mark" src="icon.svg" alt="" width="24" height="24"> Welcome to the movement, ${esc(who.name.split(' ')[0])}!</strong>
     <p>Next step: RSVP to a <a href="#live">live class</a> and tag ${esc(CONFIG.handle)} when you post your sweat.</p>`);
 
   const saved = member.get();
@@ -54,7 +54,7 @@ export function initJoin() {
     const body = `Hi Road Queen Fitness! Please add me to the movement.\n\nName: ${who.name}\nEmail: ${who.email}\nInterested in: ${interests.join(', ') || 'Everything'}`;
     window.location.href = mailto('Join the Movement', body);
     member.set(who);
-    showResult(result, `<strong>${icon('crown')} Almost there, ${esc(who.name.split(' ')[0])}!</strong>
+    showResult(result, `<strong><img class="inline-mark" src="icon.svg" alt="" width="24" height="24"> Almost there, ${esc(who.name.split(' ')[0])}!</strong>
       <p>Your email app opened with your sign-up — hit send and you're in. Then RSVP to a <a href="#live">live class</a>.</p>
       <p class="small muted">Email didn't open? Write to <a href="mailto:${esc(CONFIG.email)}">${esc(CONFIG.email)}</a>.</p>`);
   });

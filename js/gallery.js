@@ -12,7 +12,7 @@ export function initGallery() {
       <span class="media-zoom">${icon('plus')}</span>
     </button>`).join('') + `
     <a class="media-tile media-cta" href="#join" data-reveal>
-      ${icon('crown')}
+      <img class="cta-mark" src="icon.svg" alt="" width="64" height="64">
       <strong>Your moment<br>starts here</strong>
       <span>Join the movement ${icon('arrow')}</span>
     </a>`;
