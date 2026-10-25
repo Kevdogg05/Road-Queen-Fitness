@@ -22,7 +22,7 @@ export function initShop() {
       ${p.badge ? `<span class="product-badge">${esc(p.badge)}</span>` : ''}
       <div class="product-view view-front">${productArt(p.art, 'front', esc(p.name))}</div>
       <div class="product-view view-back">${productArt(p.art, 'back', esc(p.name))}</div>
-      <button type="button" class="flip-btn" data-flip aria-pressed="false" aria-label="Show the other side of ${esc(p.name)}">${icon('flip')}<span>Flip</span></button>
+      <button type="button" class="flip-btn" data-flip aria-pressed="false" aria-label="Flip ${esc(p.name)} to see the other side">${icon('flip')}<span>Flip</span></button>
     </div>
     <div class="product-body">
       <div class="product-title"><h3>${esc(p.name)}</h3><strong>${formatMoney(p.price)}</strong></div>

@@ -3,7 +3,7 @@
 import { CONFIG } from './config.js';
 import { VIDEOS, CATEGORY_LABELS } from './data.js';
 import { createStore } from './store.js';
-import { $, esc, icon, setupTabs, setupDialog, toast } from './ui.js';
+import { $, esc, icon, setupTabs, setupDialog, toast, picture, photoUrl } from './ui.js';
 
 export function initVideos() {
   const saved = createStore([], 'saved-videos');
@@ -13,8 +13,9 @@ export function initVideos() {
   function card(v) {
     const isSaved = saved.get().includes(v.id);
     return `<article class="vod-card cat-${v.cat}">
-      <button type="button" class="vod-thumb" data-play="${v.id}" aria-label="Play ${esc(v.title)}">
-        <img src="${v.thumb}" alt="" loading="lazy" style="object-position:${v.pos}">
+      <button type="button" class="vod-thumb" data-play="${v.id}">
+        <span class="sr-only">Play ${esc(v.title)}</span>
+        ${picture(v.thumb, { sizes: '(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 300px', style: `object-position:${v.pos}` })}
         <span class="vod-play">${icon('play')}</span>
         <span class="vod-duration">${v.minutes} min</span>
         <span class="vod-cat">${CATEGORY_LABELS[v.cat]}</span>
@@ -71,7 +72,7 @@ export function initVideos() {
     frame.innerHTML = v.youtubeId
       ? `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.youtubeId)}?autoplay=1&rel=0" title="${esc(v.title)}"
           allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`
-      : `<div class="video-soon" style="--thumb:url('${new URL(v.thumb, document.baseURI).href}')">
+      : `<div class="video-soon" style="--thumb:url('${new URL(photoUrl(v.thumb), document.baseURI).href}')">
           <span class="soon-badge">${icon('sparkle')} Premieres soon</span>
           <p>This one is in the edit suite. Subscribe and you'll be first to press play.</p>
           <a class="btn btn-gem" href="${esc(CONFIG.socials.youtube)}" target="_blank" rel="noopener">${icon('youtube')} Subscribe on YouTube</a>

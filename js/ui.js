@@ -1,5 +1,6 @@
 // Shared DOM helpers: selectors, escaping, icons, toasts, dialogs and forms.
 import { CONFIG } from './config.js';
+import { IMAGES } from './images.js';
 
 export const $ = (sel, root = document) => root.querySelector(sel);
 export const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -8,6 +9,30 @@ const ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&
 export const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ESCAPES[c]);
 
 export const icon = (name, cls = '') => `<svg class="icon ${cls}" aria-hidden="true"><use href="#i-${name}"/></svg>`;
+
+// A photo from img/ as a responsive <picture>: WebP with a JPEG fallback,
+// in the sizes tools/images.py generated. `sizes` describes the slot it fills
+// so phones download a small copy. A photo without generated sizes is used as-is.
+const photoInfo = (src) => {
+  const m = src.match(/^img\/([\w-]+)\.jpg$/);
+  return m && IMAGES[m[1]] ? { name: m[1], ...IMAGES[m[1]] } : null;
+};
+
+export function picture(src, { alt = '', sizes = '100vw', cls = '', style = '', eager = false } = {}) {
+  const attrs = `alt="${esc(alt)}"${cls ? ` class="${cls}"` : ''}${style ? ` style="${esc(style)}"` : ''} ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"`;
+  const info = photoInfo(src);
+  if (!info) return `<img src="${src}" ${attrs}>`;
+  const set = (ext) => info.widths.map((w) => `img/${info.name}-${w}.${ext} ${w}w`).join(', ');
+  return `<picture><source type="image/webp" srcset="${set('webp')}" sizes="${sizes}"><img src="${photoUrl(src)}" srcset="${set('jpg')}" sizes="${sizes}" width="${info.w}" height="${info.h}" ${attrs}></picture>`;
+}
+
+// The 800px JPEG copy of a photo (or the photo itself), for CSS backgrounds.
+export function photoUrl(src) {
+  const info = photoInfo(src);
+  if (!info) return src;
+  const w = info.widths.includes(800) ? 800 : info.widths[info.widths.length - 1];
+  return `img/${info.name}-${w}.jpg`;
+}
 
 export const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

@@ -17,7 +17,7 @@ about a minute.
 | Classes (and each class card's photo), events, videos, products and prices | `js/data.js` |
 | Page wording (About Us, goals, headings) | `index.html` |
 | Colors and layout | `css/style.css` (colors are the variables at the top) |
-| Photos | `img/` |
+| Photos | `img/` — after adding or replacing one, run `python3 tools/images.py` to make the phone-sized copies the page uses |
 
 You can edit any of these on github.com: open the file, click the pencil, then
 **Commit changes**.
@@ -44,8 +44,16 @@ The logo is a carnival feather headpiece over the Trinidad & Tobago flag.
 | `brand/logo-horizontal-light.png` | Logo with name, on white or light backgrounds |
 | `brand/logo-mark.png` | The logo alone, transparent background |
 
-`favicon.ico` and `apple-touch-icon.png` are the browser-tab and phone
-home-screen icons.
+`favicon.ico`, `apple-touch-icon.png` and `icon-192/512.png` (listed in
+`site.webmanifest`) are the browser-tab and phone home-screen icons.
+
+## Fonts and speed
+
+The two typefaces (Anton and Inter) are served from `fonts/` rather than
+Google Fonts, so the page paints without waiting on another server; their
+licence is in `fonts/LICENSE.txt`. Photos are delivered as WebP in three
+sizes with a JPEG fallback (`tools/images.py`), and the video library and
+shop are built after the first screen is shown.
 
 ## Domain setup (roadqueenfitness.com)
 

@@ -2,7 +2,7 @@
 // and the class name is its title; each card leads to the live schedule.
 import { CLASSES } from './data.js';
 import { upcomingSessions, relativeWhen } from './live.js';
-import { $, esc, icon } from './ui.js';
+import { $, esc, icon, picture } from './ui.js';
 
 const PLATFORM = { zoom: { label: 'Zoom', icon: 'zoom' }, ig: { label: 'IG Live', icon: 'instagram' } };
 
@@ -12,7 +12,7 @@ export function initClasses() {
     const next = sessions.find((s) => s.id === c.id);
     const p = PLATFORM[c.platform];
     return `<a class="class-card" href="#live" data-reveal>
-      <img src="${c.photo}" alt="" loading="lazy" style="object-position:${c.photoPos}">
+      ${picture(c.photo, { sizes: '(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 300px', style: `object-position:${c.photoPos}` })}
       <span class="class-tag">${icon(p.icon)} ${p.label} · ${c.minutes} min</span>
       <span class="class-body">
         <span class="class-kicker">${esc(c.kicker)}</span>

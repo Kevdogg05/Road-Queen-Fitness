@@ -16,10 +16,13 @@
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="img/night-mas.jpg">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Road Queen">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self'; connect-src 'self' https:; frame-src https:; base-uri 'self'; object-src 'none'">
+  <link rel="preload" href="fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" type="image/webp" imagesrcset="img/night-mas-480.webp 480w, img/night-mas-768.webp 768w" imagesizes="100vw">
   <link rel="stylesheet" href="css/style.css">
   <script type="module" src="js/main.js"></script>
 </head>
@@ -75,7 +78,7 @@
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a class="brand" href="#home" aria-label="Road Queen Fitness — home">
+      <a class="brand" href="#home">
         <img class="brand-mark" src="icon.svg" alt="" width="46" height="46">
         <span class="brand-text"><strong>Road Queen</strong><small>Fitness</small></span>
       </a>
@@ -96,7 +99,7 @@
         <a class="btn btn-gem btn-sm header-join" href="#join" data-nav="join">Join Us</a>
         <button type="button" class="icon-btn cart-btn" id="cart-open" aria-label="Open cart, 0 items" aria-haspopup="dialog">
           <svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg>
-          <span class="cart-count" id="cart-count" aria-hidden="true">0</span>
+          <span class="cart-count is-empty" id="cart-count" aria-hidden="true">0</span>
         </button>
         <button type="button" class="icon-btn menu-btn" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
           <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
@@ -110,7 +113,10 @@
     <!-- ============ HOME ============ -->
     <section class="hero" id="home" data-section aria-labelledby="hero-title">
       <div class="parallax-layer" data-parallax="0.25" aria-hidden="true">
-        <img class="hero-bg" src="img/night-mas.jpg" alt="" width="768" height="1365" fetchpriority="high">
+        <picture>
+          <source type="image/webp" srcset="img/night-mas-480.webp 480w, img/night-mas-768.webp 768w" sizes="100vw">
+          <img class="hero-bg" src="img/night-mas-768.jpg" srcset="img/night-mas-480.jpg 480w, img/night-mas-768.jpg 768w" sizes="100vw" alt="" width="768" height="1365" fetchpriority="high" decoding="async">
+        </picture>
       </div>
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-inner container">
@@ -128,9 +134,9 @@
             <a class="btn btn-gem btn-lg" href="#join">Join the Movement <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <a class="btn btn-ghost btn-lg" href="#live"><svg class="icon" aria-hidden="true"><use href="#i-live"/></svg> Live Classes</a>
           </div>
-          <a class="next-chip" href="#live" id="hero-next" hidden>
+          <a class="next-chip" href="#live" id="hero-next">
             <span class="pulse-dot" aria-hidden="true"></span>
-            <span><strong id="hero-next-title">Next class</strong> <span id="hero-next-when"></span></span>
+            <span><strong id="hero-next-title">Live classes</strong> <span id="hero-next-when">every week on Zoom &amp; IG Live</span></span>
           </a>
         </div>
       </div>
@@ -163,8 +169,14 @@
     <section class="section about" id="about" data-section aria-labelledby="about-title">
       <div class="container about-grid">
         <div class="about-collage" data-reveal>
-          <figure class="collage-a"><img src="img/feather-red.jpg" alt="Blue feather against a red background" loading="lazy" width="896" height="1200"></figure>
-          <figure class="collage-b"><img src="img/jab-splash.jpg" alt="Masquerader in blue paint and horns spraying a burst of red and pink paint" loading="lazy" width="922" height="1152"></figure>
+          <figure class="collage-a"><picture>
+            <source type="image/webp" srcset="img/feather-red-480.webp 480w, img/feather-red-800.webp 800w, img/feather-red-896.webp 896w" sizes="(max-width: 900px) 92vw, 44vw">
+            <img src="img/feather-red-800.jpg" srcset="img/feather-red-480.jpg 480w, img/feather-red-800.jpg 800w, img/feather-red-896.jpg 896w" sizes="(max-width: 900px) 92vw, 44vw" alt="Blue feather against a red background" loading="lazy" decoding="async" width="896" height="1200">
+          </picture></figure>
+          <figure class="collage-b"><picture>
+            <source type="image/webp" srcset="img/jab-splash-480.webp 480w, img/jab-splash-800.webp 800w, img/jab-splash-922.webp 922w" sizes="(max-width: 900px) 92vw, 44vw">
+            <img src="img/jab-splash-800.jpg" srcset="img/jab-splash-480.jpg 480w, img/jab-splash-800.jpg 800w, img/jab-splash-922.jpg 922w" sizes="(max-width: 900px) 92vw, 44vw" alt="Masquerader in blue paint and horns spraying a burst of red and pink paint" loading="lazy" decoding="async" width="922" height="1152">
+          </picture></figure>
           <div class="collage-badge"><img src="icon.svg" alt="" width="52" height="52"><span>Est. on the road</span></div>
         </div>
         <div class="about-copy" data-reveal>
@@ -199,7 +211,10 @@
 
     <!-- ============ LIVE ============ -->
     <section class="section live" id="live" data-section aria-labelledby="live-title">
-      <div class="section-bg" aria-hidden="true"><div class="parallax-layer" data-parallax="0.18"><img src="img/eye-fete.jpg" alt="" loading="lazy" width="896" height="1200"></div></div>
+      <div class="section-bg" aria-hidden="true"><div class="parallax-layer" data-parallax="0.18"><picture>
+        <source type="image/webp" srcset="img/eye-fete-480.webp 480w, img/eye-fete-800.webp 800w, img/eye-fete-896.webp 896w" sizes="100vw">
+        <img src="img/eye-fete-800.jpg" srcset="img/eye-fete-480.jpg 480w, img/eye-fete-800.jpg 800w, img/eye-fete-896.jpg 896w" sizes="100vw" alt="" loading="lazy" decoding="async" width="896" height="1200">
+      </picture></div></div>
       <div class="container">
         <div class="section-head" data-reveal>
           <p class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span>Train together, in real time</p>
@@ -265,7 +280,7 @@
               <button role="tab" type="button" data-filter="ig" aria-selected="false">IG Live</button>
               <button role="tab" type="button" data-filter="rsvp" aria-selected="false">My RSVPs <span class="tab-count" id="rsvp-count">0</span></button>
             </div>
-            <ol class="session-list" id="session-list" role="tabpanel" aria-label="Upcoming classes"></ol>
+            <div role="tabpanel" aria-label="Upcoming classes"><ol class="session-list" id="session-list"></ol></div>
           </div>
         </div>
 
@@ -296,7 +311,10 @@
 
     <!-- ============ ACTIVE (VIDEOS) ============ -->
     <section class="section active" id="active" data-section aria-labelledby="active-title">
-      <div class="section-bg" aria-hidden="true"><div class="parallax-layer" data-parallax="0.15"><img src="img/night-mas.jpg" alt="" loading="lazy" width="768" height="1365" style="object-position: 50% 85%"></div></div>
+      <div class="section-bg" aria-hidden="true"><div class="parallax-layer" data-parallax="0.15"><picture>
+        <source type="image/webp" srcset="img/night-mas-480.webp 480w, img/night-mas-768.webp 768w" sizes="100vw">
+        <img src="img/night-mas-768.jpg" srcset="img/night-mas-480.jpg 480w, img/night-mas-768.jpg 768w" sizes="100vw" alt="" loading="lazy" decoding="async" width="768" height="1365" style="object-position: 50% 85%">
+      </picture></div></div>
       <div class="container">
         <div class="section-head" data-reveal>
           <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Video on demand</p>
@@ -405,7 +423,10 @@
 
     <!-- ============ JOIN US ============ -->
     <section class="section join" id="join" data-section aria-labelledby="join-title">
-      <div class="section-bg" aria-hidden="true"><div class="parallax-layer" data-parallax="0.22"><img src="img/jab-splash.jpg" alt="" loading="lazy" width="922" height="1152" style="object-position: 50% 35%"></div></div>
+      <div class="section-bg" aria-hidden="true"><div class="parallax-layer" data-parallax="0.22"><picture>
+        <source type="image/webp" srcset="img/jab-splash-480.webp 480w, img/jab-splash-800.webp 800w, img/jab-splash-922.webp 922w" sizes="100vw">
+        <img src="img/jab-splash-800.jpg" srcset="img/jab-splash-480.jpg 480w, img/jab-splash-800.jpg 800w, img/jab-splash-922.jpg 922w" sizes="100vw" alt="" loading="lazy" decoding="async" width="922" height="1152" style="object-position: 50% 35%">
+      </picture></div></div>
       <div class="container join-grid">
         <div class="join-main" data-reveal>
           <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Join Us</p>
@@ -463,7 +484,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a class="brand" href="#home" aria-label="Back to top">
+      <a class="brand" href="#home" title="Back to top">
         <img class="brand-mark" src="icon.svg" alt="" width="46" height="46">
         <span class="brand-text"><strong>Road Queen</strong><small>Fitness</small></span>
       </a>

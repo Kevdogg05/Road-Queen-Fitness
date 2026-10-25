@@ -5,6 +5,21 @@ import { member } from './state.js';
 import { $, $$, esc, icon, validate, isEmail, mailto, showResult, setupDialog, toast, copyText } from './ui.js';
 
 export function initJoin() {
+  // Structured data for search engines, built from CONFIG so it stays in sync.
+  const ld = document.createElement('script');
+  ld.type = 'application/ld+json';
+  ld.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: CONFIG.brand,
+    url: CONFIG.siteUrl,
+    logo: `${CONFIG.siteUrl}brand/logo-mark.png`,
+    image: `${CONFIG.siteUrl}img/og-image.jpg`,
+    email: CONFIG.email,
+    sameAs: Object.values(CONFIG.socials),
+  });
+  document.head.append(ld);
+
   // Fill every social / handle / email slot from CONFIG.
   $$('[data-social]').forEach((a) => { a.href = CONFIG.socials[a.dataset.social]; });
   $$('[data-handle]').forEach((el) => { el.textContent = CONFIG.handle; });

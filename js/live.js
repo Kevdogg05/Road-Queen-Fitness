@@ -219,7 +219,6 @@ export function initLive() {
          <button type="button" class="btn btn-ghost" data-ics="${next.key}">${icon('calendar')} Add to calendar</button>`;
 
     const heroNext = $('#hero-next');
-    heroNext.hidden = false;
     heroNext.classList.toggle('is-live', live);
     $('#hero-next-title').textContent = live ? `Live now: ${next.title}` : `Next live: ${next.title}`;
     $('#hero-next-when').textContent = live ? '— tap to join' : relativeWhen(next.start);

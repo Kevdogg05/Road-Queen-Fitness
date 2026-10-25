@@ -1,0 +1,16 @@
+{
+  "name": "Road Queen Fitness",
+  "short_name": "Road Queen",
+  "description": "Soca dance and fitness: live classes, on-demand videos and carnival-ready gear.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#020514",
+  "theme_color": "#020514",
+  "lang": "en",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
