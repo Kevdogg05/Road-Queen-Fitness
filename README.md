@@ -14,7 +14,7 @@ about a minute.
 | What | Where |
 | --- | --- |
 | Email, social links, Instagram handle, Zoom link, live-stream embed | `js/config.js` |
-| Class schedule, events, videos, products and prices, gallery photos | `js/data.js` |
+| Classes (and each class card's photo), events, videos, products and prices | `js/data.js` |
 | Page wording (About Us, goals, headings) | `index.html` |
 | Colors and layout | `css/style.css` (colors are the variables at the top) |
 | Photos | `img/` |

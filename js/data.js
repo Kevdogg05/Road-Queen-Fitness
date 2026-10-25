@@ -1,25 +1,14 @@
-// Site content: gallery, weekly classes, remote events, videos and products.
+// Site content: weekly classes, remote events, videos and products.
 // Edit freely — every section renders from these lists.
 
-export const GALLERY = [
-  { src: 'img/mas-queen.jpg', w: 922, h: 1152, title: 'Feathers up', caption: 'Red, blue and royal on the road.', alt: 'Laughing masquerader in a towering red and blue feathered headpiece, splashed with paint and holding a blue cup', size: 'tall' },
-  { src: 'img/jab-splash.jpg', w: 922, h: 1152, title: 'Blue devil energy', caption: "J'ouvert paint, no apologies.", alt: 'Masquerader in blue paint and horns spraying a burst of red and pink paint', size: '' },
-  { src: 'img/night-mas.jpg', w: 768, h: 1365, title: 'After-dark fete', caption: 'Palms on fire, paint in the air.', alt: 'Paint-covered revellers dancing under red-lit palm trees at night, a woman in a jewelled crown up front', size: 'tall' },
-  { src: 'img/led-mas.jpg', w: 922, h: 1152, title: 'Lit up for the road', caption: 'Built to move in every costume.', alt: 'Carnival costume with glowing blue LED feathers and beadwork at night', size: '' },
-  { src: 'img/wine-down.jpg', w: 1400, h: 764, title: 'Wine it down', caption: 'Sweat sessions that feel like a party.', alt: 'Smiling woman in a red crop top and blue shorts dancing in coloured smoke under stage lights', size: 'wide' },
-  { src: 'img/eye-fete.jpg', w: 896, h: 1200, title: 'Eyes on the crown', caption: 'Focus. Fire. Finish.', alt: 'Blue painted eye reflecting a crowd of dancers, a red tear running into a crimson shoreline under palm trees', size: '' },
-  { src: 'img/power-split.jpg', w: 976, h: 1077, title: 'Soca power', caption: 'Strength on one side, speed on the other.', alt: 'Split image: a high kick against red, and an athlete in red sprinting against blue', size: '' },
-  { src: 'img/feather-red.jpg', w: 896, h: 1200, title: 'Rise up', caption: 'Light as a feather, strong on the road.', alt: 'Blue feather against a red background', size: '' },
-];
-
-// Weekly live classes. day: 0 = Sunday … 6 = Saturday; time is 24h in CONFIG.timezone.
+// Weekly live classes, one per photo card on the home page.
+// day: 0 = Sunday … 6 = Saturday; time is 24h in CONFIG.timezone.
+// photo / photoPos: the card's background picture and which part of it to show.
 export const CLASSES = [
-  { id: 'soca-sweat', title: 'Soca Sweat HIIT', day: 1, time: '19:00', minutes: 45, platform: 'zoom', level: 'All levels', blurb: 'Intervals timed to the drop. Bring water and a towel.' },
-  { id: 'wine-core', title: 'Lunch Break Wine & Core', day: 2, time: '12:15', minutes: 30, platform: 'ig', level: 'All levels', blurb: 'Thirty minutes of waistline work on your lunch break.' },
-  { id: 'road-march', title: 'Road March Cardio', day: 3, time: '19:30', minutes: 60, platform: 'zoom', level: 'Intermediate', blurb: 'Chip, jump and wave — stamina for the full parade route.' },
-  { id: 'choreo-lab', title: 'Choreo Lab: Feather Flow', day: 4, time: '20:00', minutes: 45, platform: 'ig', level: 'Beginner friendly', blurb: 'Learn this week’s routine count by count.' },
-  { id: 'fete-bootcamp', title: 'Saturday Fete Bootcamp', day: 6, time: '10:00', minutes: 60, platform: 'zoom', level: 'Advanced', blurb: 'Strength circuits and soca sprints. Our biggest class.' },
-  { id: 'queen-stretch', title: "Queen's Stretch & Recovery", day: 0, time: '17:00', minutes: 30, platform: 'ig', level: 'All levels', blurb: 'Mobility and deep stretch to reset for the week.' },
+  { id: 'soca-sweat', title: 'Soca Sweat HIIT', kicker: 'Intervals', day: 1, time: '19:00', minutes: 45, platform: 'zoom', level: 'All levels', blurb: 'Intervals timed to the drop. Bring water and a towel.', photo: 'img/power-split.jpg', photoPos: '76% 30%' },
+  { id: 'wine-core', title: 'Wine & Core', kicker: 'Lunch break', day: 2, time: '12:15', minutes: 30, platform: 'ig', level: 'All levels', blurb: 'Thirty minutes of waistline work on your lunch break.', photo: 'img/wine-down.jpg', photoPos: '58% 40%' },
+  { id: 'road-march', title: 'Road March Cardio', kicker: 'Cardio', day: 3, time: '19:30', minutes: 60, platform: 'zoom', level: 'Intermediate', blurb: 'Chip, jump and wave — stamina for the full parade route.', photo: 'img/mas-queen.jpg', photoPos: '50% 28%' },
+  { id: 'choreo-lab', title: 'Feather Flow', kicker: 'Choreo lab', day: 4, time: '20:00', minutes: 45, platform: 'ig', level: 'Beginner friendly', blurb: 'Learn this week’s routine count by count.', photo: 'img/led-mas.jpg', photoPos: '50% 30%' },
 ];
 
 // One-off interactive events. date is local to CONFIG.timezone.
